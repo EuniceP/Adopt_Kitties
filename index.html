@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css/reset.css">
 		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style.css">
+		
 	</head>
 
 	<body ng-controller="KittiesController as kitties">
@@ -23,13 +24,13 @@
 					<div class="catdesc">
 						<h3>
 						<span>Age: {{cat.monthsOld | number:0}} 
-						</span><br> <br>Gender: {{cat.gender}}{{cat.adopted}}
+						</span><br> <br>Gender: {{cat.gender}}<br><br>{{cat.status}}
 						</h3>
 					</div> 
 					<img class="catpic" src={{cat.image}} alt={{cat.catName}}>
 					<br />
 					<span ng-class={adopted: cat.adopted}></span>
-					<input class="button" type="button" value="Adopt Me" ng-model="cat.adopted" ng-click="kitties.setAdopted($index)"><br><br>
+					<button class="button" ng-model="cat.adopted" ng-click="kitties.setAdopted($index)">Adopt Me</button><br><br>
 					
 				</li>
 			  </ul>
@@ -42,11 +43,11 @@
 					<div class="catdesc">
 						<h3>
 						<span>Age: {{cat.monthsOld | number:0}} 
-						</span><br> <br>Gender: {{cat.gender }}{{cat.adopted}}
+						</span><br> <br>Gender: {{cat.gender }} 
 						</h3>
 					</div> 
 					<img class="catpic" src={{cat.image}} alt={{cat.catName}}>
-					<br />
+					<br /><br /><br />
 					<p class="adopted">Adopted<br><br>
 					</p>
 				</li>
@@ -54,7 +55,7 @@
 			</div> 
 		</div>
    		<!--Sourcing Angular-->		
-	   <script src="js/angular.min.js"></script>
+	    <script src="js/angular.min.js"></script> -->
  		<!-- Source in module -->
  		<script src="js/main.js"></script>
 		<!-- Source in controller -->
