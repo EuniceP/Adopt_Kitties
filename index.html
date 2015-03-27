@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html ng-app="KittiesApp">
+	<head>
+
+		<title>Kitties App!</title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body ng-controller="KittiesController as kitties">
+		<div id="title">Adopt a Kitty</div>
+		<div id="search">
+			<input id="searchtextbox" type="text" ng-model="searchCat" placeholder="Search..."/>
+        </div>	
+		<div id="container">
+		    <div class="left-container" > 
+			  <ul class="cat_box" ng-repeat="cat in kitties.cats | filter: false | filter: searchCat">
+			  <h1 class="dashed">{{cat.catName | uppercase}}</h1>
+					
+				<li class="dashed">
+					<div class="catdesc">
+						<h3>
+						<span>Age: {{cat.monthsOld | number:0}} 
+						</span><br> <br>Gender: {{cat.gender}}{{cat.adopted}}
+						</h3>
+					</div> 
+					<img class="catpic" src={{cat.image}} alt={{cat.catName}}>
+					<br />
+					<span ng-class={adopted: cat.adopted}></span>
+					<input class="button" type="button" value="Adopt Me" ng-model="cat.adopted" ng-click="kitties.setAdopted($index)"><br><br>
+					
+				</li>
+			  </ul>
+			</div>
+			<div class="right-container" >
+		  	  <ul class="cat_box" ng-repeat="cat in kitties.cats | filter: true | filter: searchCat">
+			  <h1 class="dashed">{{cat.catName | uppercase}}</h1>
+					
+				<li class="dashed">
+					<div class="catdesc">
+						<h3>
+						<span>Age: {{cat.monthsOld | number:0}} 
+						</span><br> <br>Gender: {{cat.gender }}{{cat.adopted}}
+						</h3>
+					</div> 
+					<img class="catpic" src={{cat.image}} alt={{cat.catName}}>
+					<br />
+					<p class="adopted">Adopted<br><br>
+					</p>
+				</li>
+			  </ul>	
+			</div> 
+		</div>
+   		<!--Sourcing Angular-->		
+	   <script src="js/angular.min.js"></script>
+ 		<!-- Source in module -->
+ 		<script src="js/main.js"></script>
+		<!-- Source in controller -->
+		<script src="js/KittiesController.js"></script>
+	</body>
+</html>
