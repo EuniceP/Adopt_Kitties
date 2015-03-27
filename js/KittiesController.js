@@ -5,9 +5,11 @@
 
 
 	function KittiesController() {
-		this.setAdopted = setAdopted;
-
+		
+		this.deleteKittie = deleteKittie;
+		var itemIndex;
 		var self = this;
+
 		this.cats =
 		[
 			{
@@ -45,13 +47,18 @@
 
 		];
 
-		function setAdopted($index) {
-		// if (self.cats[$index].adopted === false ) 
-			self.cats[$index].adopted = true;
-			self.cats[$index].status = "Adopted";
-			location.reload();
-		// else
-			// self.cats[$index].adopted = false;
+	
+
+		function deleteKittie($index) {
+			// if (self.cats[name].catName === name) {
+
+			// for (i=0;i<self.cats.length;i++) {
+			// 	self.itemIndex = self.cats[i].name = name;
+			// }
+						
+			// self.cats.splice(self.itemIndex,1);
+			self.cats.splice($index,1);
+			// location.reload();
 		}
 	}
 	
