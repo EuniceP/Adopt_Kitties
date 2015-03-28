@@ -55,7 +55,7 @@ img.hover{
 	float: left;
 	width: 30%;
 	margin: 20px 30px 40px 120px;
-	padding: 10px;
+	padding: 0 10px;
 	text-align: center;
 	background-color: white;
 }
@@ -63,7 +63,7 @@ img.hover{
 	float: right;
 	width: 30%;
 	margin: 20px 120px 40px 30px;
-	padding: 10px;
+	padding: 0 10px;
 	text-align: center;
 	background-color: white;
 }

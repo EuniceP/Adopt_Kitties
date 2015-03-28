@@ -24,39 +24,39 @@
 					<div class="catdesc">
 						<h3>
 						<span>Age: {{cat.monthsOld | number:0}} 
-						</span> <br>Gender: {{cat.gender}}<br>{{cat.status}}   index:{{kitties.index(cat)}}
+						</span> <br>Gender: {{cat.gender}}<br>{{cat.status}} 
 						</h3>
 					</div> 
 					<img class="catpic" src={{cat.image}} alt={{cat.catName}}>
 					<br />					
 					<div>
 						<button class="button" type="button" ng-click="cat.adopted=true;cat.status='Adopted'">Adopt Me!</button>
-						<button class="button"  ng-click="kitties.deleteKittie($index)">Delete</button>
+						<button class="button"  ng-click="kitties.deleteKittie(cat)">Delete</button>
 					</div>
 				</li>
 			  </ul>
 			</div>
 			<div class="right-container" >
-		  	  <ul class="cat_box" ng-repeat="cat2 in kitties.cats|  filter: true | filter: searchCat">
-			  <h1 class="dashed">{{cat2.catName | uppercase}}</h1>
+		  	  <ul class="cat_box" ng-repeat="cat in kitties.cats|  filter: true | filter: searchCat">
+			  <h1 class="dashed">{{cat.catName | uppercase}}</h1>
 					
 				<li class="dashed">
 					<div class="catdesc">
 						<h3>
-						<span>Age: {{cat2.monthsOld | number:0}} 
-						</span><br>Gender: {{cat2.gender }}<br>{{cat2.status}}   index:{{cat2.$index}}</h3>
+						<span>Age: {{cat.monthsOld | number:0}} 
+						</span><br>Gender: {{cat.gender }}<br>{{cat.status}}</h3>
 					</div> 
-					<img class="catpic" src={{cat2.image}} alt={{cat2.catName}}>
+					<img class="catpic" src={{cat.image}} alt={{cat.catName}}>
 					
 					<div>
-						<button class="button"  ng-click="kitties.deleteKittie($index)">Delete</button>
+						<button class="button"  ng-click="kitties.deleteKittie(cat)">Delete</button>
 					</div>
 				</li>
 			  </ul>	
 			</div> 
 		</div>
    		<!--Sourcing Angular-->		
-	    <script src="js/angular.min.js"></script> -->
+	    <script src="js/angular.min.js"></script> 
  		<!-- Source in module -->
  		<script src="js/main.js"></script>
 		<!-- Source in controller -->
